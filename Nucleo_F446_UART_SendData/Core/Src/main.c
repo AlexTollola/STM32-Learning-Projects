@@ -24,6 +24,8 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
+#include <stdio.h>
+
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -57,6 +59,8 @@ void SystemClock_Config(void);
 /* USER CODE BEGIN 0 */
 
 static uint8_t data[] = "Hello World\n";
+static uint16_t number = (uint16_t)3125;
+static char numArray[50] = {0};
 
 /* USER CODE END 0 */
 
@@ -103,10 +107,11 @@ int main(void)
 
     /* USER CODE BEGIN 3 */
 
-	  HAL_UART_Transmit(&huart2, data, 12, 1000);
-	  HAL_Delay(500);
-	  HAL_UART_Transmit(&huart1, data, 12, 1000);
-	  HAL_Delay(500);
+	  sprintf(numArray, "%d\n", number);
+
+	  HAL_UART_Transmit(&huart2, (uint8_t*)data, 12, 1000);
+	  HAL_UART_Transmit(&huart1, (uint8_t*)numArray, 12, 1000);
+	  HAL_Delay(1000);
   }
   /* USER CODE END 3 */
 }
