@@ -39,3 +39,23 @@
 
 # debug information files
 *.dwo
+
+# STM32 Project Structure ignores
+
+# Build output
+Debug/
+Release/
+*.o
+*.d
+*.elf
+*.bin
+*.hex
+*.map
+*.dwo
+
+# IDE local settings
+.settings/
+*.launch
+
+# STM32 HAL drivers (regenerated from .ioc)
+Drivers/
